@@ -124,7 +124,7 @@ include('src/db.php')
         </div>
 
         <div class="menu-wrapper" onclick="filter('explorar')">
-            <img src="./assets/img/search.svg" alt="pagina inicial">
+            <img src="./assets/img/popular.svg" alt="pagina inicial">
             <figcaption class="menu-text col-2">Popular</figcaption>
         </div>
         <div class="menu-wrapper" onclick="filter('menu')">
