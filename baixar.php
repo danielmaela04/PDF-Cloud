@@ -51,10 +51,8 @@
 
     <section class="boock-down">
         <div class="boock-detail">
-            <img class="down-capa" data-pdf-thumbnail-file="./files/<?php echo $row['name'];?>" src="./assets/img/capa.jpg" alt="capa">
+            <img class="down-capa" data-pdf-thumbnail-file="./files/<?php echo $row['name'];?>.pdf" src="./assets/img/capa.jpg" alt="capa">
             <figcaption class="boock-title"><?php echo $row['name'];?></figcaption>
-            <!-- <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet ad facere obcaecati vitae
-                fugiat sit minus. Molestiae in.</p> -->
         </div>
     </section>
     <div class="status">

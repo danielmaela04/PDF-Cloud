@@ -44,10 +44,10 @@ include('src/db.php')
 
         <main class="tema">
         <?php
-            $result = mysqli_query($conn, "SELECT * FROM livros ORDER by ID DESC");
+            $result = mysqli_query($conn, "SELECT * FROM livros ORDER by ID DESC LIMIT 6");
              while($row = $result -> fetch_array()) { ?>
             <a href="baixar.php?name=<?php echo $row['name'] ?>" class="box-1 box-2">
-                <img class="main-icon" data-pdf-thumbnail-file="./files/<?php echo $row['name'];?>" src="./assets/img/capa.jpg" alt="capa">
+                <img class="main-icon" data-pdf-thumbnail-file="./files/<?php echo $row['name'];?>.pdf" src="./assets/img/capa.jpg" alt="capa">
                 <figcaption class="main-text"><?php echo $row['name'];?></figcaption>
             </a>
             <?php }?>
@@ -66,7 +66,7 @@ include('src/db.php')
             $result = mysqli_query($conn, "SELECT * FROM livros ORDER by ID DESC");
              while($row = $result -> fetch_array()) { ?>
             <a href="baixar.php?name=<?php echo $row['name'] ?>" class="box-1 box-2">
-                <img src="./assets/img/Book_Cover_Mockup.jpg" alt="Livros" class="main-icon">
+            <img class="main-icon" data-pdf-thumbnail-file="./files/<?php echo $row['name'];?>.pdf" src="./assets/img/capa.jpg" alt="capa">
                 <figcaption class="main-text"><?php echo $row['name'];?></figcaption>
             </a>
             <?php }?>

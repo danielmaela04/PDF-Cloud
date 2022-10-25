@@ -60,15 +60,15 @@ $resultados = $sth->fetchAll(PDO::FETCH_ASSOC);
                  foreach($resultados as $Resultado) {
              ?>
         <a href="baixar.php?name=<?php echo $Resultado['name'] ?>" class="box-1 box-2">
-            <img src="./assets/img/capa.jpg" alt="Exame" class="main-icon">
-            <figcaption class="main-text">
+        <img class="main-icon" data-pdf-thumbnail-file="./files/<?php echo $Resultado['name'];?>" src="./assets/img/capa.jpg" alt="capa">
+       <figcaption class="main-text">
                 <?php echo $Resultado['name'];?>
             </figcaption>
         </a>
 
     <?php } } else { ?></div>
     <div class="not-result" style="display: grid !important;">
-        <div class="text-result">Não foram encontrados resultados para <?php echo $exemplo ?>
+        <div class="text-result">Não foram encontrados resultados para <spam style="border-bottom: 1px solid #000000;"><?php echo $exemplo ?><span>
         </div>
     </div>
     <?php } ?>
@@ -77,6 +77,8 @@ $resultados = $sth->fetchAll(PDO::FETCH_ASSOC);
 
     <script src="./assets/js/jquery.js"></script>
     <script src="./assets/js/general.js"></script>
+    <script src="./assets/js/pdfThumbnails.js" data-pdfjs-src="./assets/js/pdf.js/build/pdf.js"></script>
+
 </body>
 
 </html>

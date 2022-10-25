@@ -10,7 +10,7 @@ $result = mysqli_query($conn, $sql);
 
 $files = mysqli_fetch_assoc($result);
 
-$file = 'files/' . $files['name'];
+$file = 'files/' . $files['name'] .= '.pdf';
 
 if (file_exists($file)) {
     header('Content-Description: File Transfer');

@@ -1,6 +1,4 @@
-
 $('.custom-file-upload input[type="file"]').each(function () {
-    // Refs
     var $fileUpload = $(this),
         $filelabel = $fileUpload.next('label'),
         $filelabelText = $filelabel.find('span'),

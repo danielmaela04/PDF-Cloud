@@ -32,7 +32,7 @@
         </div>
     </div>
 
-    <form action="carregar.php" method="post" enctype="multipart/form-data" style="margin: 1rem;">
+    <form action="carregar.php" method="post" enctype="multipart/form-data" style="margin: 1rem;" id="form">
         <div class="custom-file-upload">
             <input type="file" name="pdf" id="fileuploadInput" accept=".pdf">
             <label for="fileuploadInput">
@@ -44,7 +44,7 @@
                 </span>
             </label>
         </div>
-        <select name="categoria" class="btn name-file" style="margin-top: 1rem;">
+        <select name="categoria" class="btn name-file" id="categoria" required="required" style="margin-top: 1rem;">
             <option disabled selected value="">Categoria</option>
             <?php
             $result = mysqli_query($conn, "SELECT * FROM categorias ORDER by ID DESC");
@@ -53,7 +53,7 @@
             <?php }?>
         </select>
         <div class="button-container" style="margin-top: 1rem;">
-            <button type="submit" name="submit" class="btn">Carregar</button>
+            <button type="submit" name="submit" class="btn" id="submit">Carregar</button>
         </div>
     </form>
 

@@ -38,6 +38,7 @@ include("download.php");
     </div>
 <?php } ?>
 
+    <div class="reco" style="margin-top: 4rem;">
     <?php if(isset($_GET['name'])){
             $name = $_GET['name'];
         
@@ -45,9 +46,8 @@ include("download.php");
         while($row = $result -> fetch_array()) { 
         ?>
 
-    <div class="reco" style="margin-top: 4rem;">
-    <a href="baixar.php?name=<?php echo $row['name'] ?>" class="box-1 box-2">
-                <img src="./assets/img/Book_Cover_Mockup.jpg" alt="Livros" class="main-icon">
+        <a href="baixar.php?name=<?php echo $row['name'] ?>" class="box-1 box-2">
+        <img class="main-icon" data-pdf-thumbnail-file="./files/<?php echo $row['name'];?>" src="./assets/img/capa.jpg" alt="capa">
                 <figcaption class="main-text"><?php echo $row['name'];?></figcaption>
             </a>
 
@@ -56,6 +56,8 @@ include("download.php");
 
     <script src="./assets/js/jquery.js"></script>
     <script src="./assets/js/general.js"></script>
+    <script src="./assets/js/pdfThumbnails.js" data-pdfjs-src="./assets/js/pdf.js/build/pdf.js"></script>
+
 </body>
 
 </html>
