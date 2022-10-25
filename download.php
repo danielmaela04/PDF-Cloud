@@ -25,7 +25,7 @@ if (file_exists($file)) {
     readfile($file);
 
     $newCount = $files['download'] + 1;
-    $updateQuery = "UPDATE `livros` SET `download` = '1' WHERE id = 4";
+    $updateQuery = "UPDATE `livros` SET `download` = '$newCount' WHERE id = $var_1";
     mysqli_query($conn, $updateQuery);
     exit;
     }

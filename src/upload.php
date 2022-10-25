@@ -28,7 +28,7 @@ if ($filesize < 100 && $filesize< 50000000) {
    $name = pathinfo($name_extension, PATHINFO_FILENAME);
    $result = mysqli_query($conn,"INSERT INTO livros (name, size, type, categoria) VALUES ('$name', '$size', '$type', '$categoria')");
    if($result == TRUE){
-    echo "<script>alert('O arquivo foi carregado com sucesso')</script>";
+    echo "<script>alert('O arquivo foi carregado com sucesso') </script>";
    }
  }
 }
