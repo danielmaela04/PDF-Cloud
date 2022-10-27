@@ -125,18 +125,32 @@ a:link, a:hover, a:active, a:focus {
 
 .preview {
     display: none;
-    min-height: 80vh;
+    background-color: #ffffff;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: .3rem;
+    color: #000000;
+    border-radius: 1.5rem 1.5rem 0 0;
+    z-index: 999;
+    box-shadow: 0 0 6px rgba(23, 23, 23, 0.438);
+}
+
+.preview-pdf {
+    margin: .5rem;
+    height: 90vh;
+    display: none;
     background-color: #ffffff;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    margin: .5rem;
     padding: .3rem;
     color: #000000;
-    border-radius: .5rem;
+    border-radius: 5px;
     z-index: 999;
-    box-shadow: 0 0 4px rgba(23, 23, 23, 0.23);
+    box-shadow: 0 0 6px rgba(23, 23, 23, 0.438);
 }
 
 .close-button {

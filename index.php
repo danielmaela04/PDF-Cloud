@@ -11,7 +11,6 @@ include('src/db.php')
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel="icon" href="./assets/img/favicon.svg">
     <link rel='stylesheet' type='text/css' media='screen' href='./assets/css/style.css'>
-    
 </head>
 
 <body>
@@ -41,12 +40,12 @@ include('src/db.php')
                 </a>
             </div>
         </section>
-
+        
         <main class="tema">
         <?php
             $result = mysqli_query($conn, "SELECT * FROM livros ORDER by ID DESC LIMIT 6");
              while($row = $result -> fetch_array()) { ?>
-            <a href="baixar.php?name=<?php echo $row['name'] ?>" class="box-1 box-2">
+            <a href="baixar.php?uid=<?php echo $row['id'] ?>" class="box-1 box-2">
                 <img class="main-icon" data-pdf-thumbnail-file="./files/<?php echo $row['name'];?>.pdf" src="./assets/img/capa.jpg" alt="capa">
                 <figcaption class="main-text"><?php echo $row['name'];?></figcaption>
             </a>
@@ -74,9 +73,6 @@ include('src/db.php')
     </section>
 
     <section class=" filterDiv menu">
-        <div class="anuncio">
-            <img src="./assets/img/Book_Cover_Mockup.jpg" alt="anuncio" class="ads-img">
-        </div>
         <div class="menu-princ">
             <a href="#" class="menu-wrapper-1">
                 <img src="./assets/img/facebook.svg" alt="facebook" class="menu-icon">

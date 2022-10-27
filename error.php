@@ -16,6 +16,12 @@
               <a href="index.php"><button class="button">Refresh</button></a>
         </div>
     </div>
+    <?php
+
+if (!extension_loaded('imagick')){
+    echo 'imagick não instalado';
+}
+?>
 
     <style>
         .container {

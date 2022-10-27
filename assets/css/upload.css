@@ -76,14 +76,14 @@ a:focus {
   transition: 0.3s;
 }
 
-.btn:hover {
+/* .btn:hover {
   text-decoration: none;
   background-color: #ffffff;
   color: #000000;
   padding: 10px 20px;
   border: none;
   outline: 1px solid #f1f1f182;
-}
+} */
 
 .form input {
   margin: 10px 0;

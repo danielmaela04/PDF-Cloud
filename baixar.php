@@ -33,16 +33,28 @@
             <h4 class="page-title">Detalhes</h4>
         </div>
     </div>
- <?php if(isset($_GET['name'])){
-            $name = $_GET['name'];
+    <?php if(isset($_GET['uid'])){
+            $uid = $_GET['uid'];
         
-        $result = mysqli_query($conn, "SELECT * FROM livros WHERE name = '$name'");
+        $result = mysqli_query($conn, "SELECT * FROM livros WHERE id = '$uid'");
         while($row = $result -> fetch_array()) { 
         ?>
     <section class="preview">
-        <iframe src="./files/<?php echo $row['name'];?>" width="100%" height="100%"></iframe>
+        <form action="" method="" style="margin: 1rem; display: flex; flex-direction: column; gap: 1rem;" id="ajax">
+            <input type="text" name="uid" value="<?php echo $uid ?>" style="display: none;">
+            <input type="text" name="name" class="btn name-file" placeholder="Digite o seu nome" required="required">
+            <input type="email" name="email" placeholder="Digite o seu email" class="btn name-file" required="required">
+            <textarea name="desc" placeholder="Digite uma descrição" class="btn name-file" required="required" placeholder="Digite uma descrição"></textarea>
+            <div class="button-container" style="margin-top: 1rem; gap: 1rem;">
+                <button type="submit" name="submit" class="btn" id="submit">Enviar</button>
+                <span class="btn" onclick="closeModal()" style="text-align: center;">Cancelar</span>
+            </div>
+        </form>
+    </section>
 
-        <div class="col-x">
+    <section class="preview-pdf">
+    <iframe src="files/css-grid (4).pdf" width="100%" height="100px" scrolling="no" style="border:none;"></iframe>
+        <div class="col-x" onclick="closeModal_pdf()">
             <div class="close-button">
                 <img src="./assets/img/x-circle.svg" alt="sair" class="col-x">
             </div>
@@ -51,8 +63,11 @@
 
     <section class="boock-down">
         <div class="boock-detail">
-            <img class="down-capa" data-pdf-thumbnail-file="./files/<?php echo $row['name'];?>.pdf" src="./assets/img/capa.jpg" alt="capa">
-            <figcaption class="boock-title"><?php echo $row['name'];?></figcaption>
+            <img class="down-capa" data-pdf-thumbnail-file="./files/<?php echo $row['name'];?>.pdf"
+                src="./assets/img/capa.jpg" alt="capa">
+            <figcaption class="boock-title">
+                <?php echo $row['name'];?>
+            </figcaption>
         </div>
     </section>
     <div class="status">
@@ -62,9 +77,9 @@
         </a>
         <div class="status-1">
             <img src="./assets/img/eye.svg" alt="downloads">
-            <figcaption class="status-text">Visualizar</figcaption>
+            <figcaption class="status-text" onclick="openModal_pdf()">Visualizar</figcaption>
         </div>
-        <div class="status-1">
+        <div class="status-1" onclick="openModal()">
             <img src="./assets/img/exclamation-triangle.svg" alt="downloads">
             <figcaption class="status-text">Reportar</figcaption>
         </div>
@@ -85,20 +100,27 @@
 
     <div class="detalhes-container">
         <div class="detalhes">Tamanho:</div>
-        <span class="author-upload"><?php echo number_format($row['size']/(1024*1024),2);?> MB</span>
+        <span class="author-upload">
+            <?php echo number_format($row['size']/(1024*1024),2);?> MB
+        </span>
     </div>
     <div class="detalhes-container">
         <div class="detalhes">Downloads:</div>
-        <span class="author-upload"><?php echo $row['download']; ?></span>
+        <span class="author-upload">
+            <?php echo $row['download']; ?>
+        </span>
     </div>
     <div class="detalhes-container">
         <div class="detalhes">Categoria:</div>
-        <span class="author-upload"><?php echo $row['categoria']; ?></span>
+        <span class="author-upload">
+            <?php echo $row['categoria']; ?>
+        </span>
     </div>
     <?php }} ?>
 
     <script src="./assets/js/jquery.js"></script>
     <script src="./assets/js/general.js"></script>
+    <script src="./assets/js/report.js"></script>
     <script src="./assets/js/pdfThumbnails.js" data-pdfjs-src="./assets/js/pdf.js/build/pdf.js"></script>
 </body>
 
