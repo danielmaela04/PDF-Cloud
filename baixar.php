@@ -14,6 +14,7 @@
     <link rel="icon" href="./assets/img/favicon.svg">
     <link rel='stylesheet' type='text/css' media='screen' href='./assets/css/down.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='./assets/css/upload.css'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.2.228/pdf.min.js"></script>
 </head>
 
 <body>
@@ -53,12 +54,24 @@
     </section>
 
     <section class="preview-pdf">
-    <iframe src="files/css-grid (4).pdf" width="100%" height="100px" scrolling="no" style="border:none;"></iframe>
-        <div class="col-x" onclick="closeModal_pdf()">
-            <div class="close-button">
-                <img src="./assets/img/x-circle.svg" alt="sair" class="col-x">
-            </div>
-        </div>
+    <button id="show-pdf-button">Show PDF</button> 
+
+<div id="pdf-main-container">
+	<div id="pdf-loader">Loading document ...</div>
+	<div id="pdf-contents">
+		<div id="pdf-meta">
+			<div id="pdf-buttons">
+				<button id="pdf-prev">Previous</button>
+				<button id="pdf-next">Next</button>
+			</div>
+			<div id="page-count-container">Page <div id="pdf-current-page"></div> of <div id="pdf-total-pages"></div></div>
+		</div>
+		<canvas id="pdf-canvas" width="400"></canvas>
+		<div id="page-loader">Loading page ...</div>
+	</div>
+</div>
+
+    <span class="btn" onclick="closeModal_pdf()" style="text-align: center; bottom: 0; position: absolute; margin: 0rem; left: 0; border-radius: 0; background-color: #ffffff; color: #000000;">Fechar</span>
     </section>
 
     <section class="boock-down">

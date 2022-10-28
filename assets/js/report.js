@@ -7,13 +7,21 @@ $(document).ready(function () {
             url: "src/report.php",
             data: dados,
             success: function (data) {
-               alert("Eviado com sucesso, Obrigado!")
+                alert("Enviado com sucesso.")
             }
         });
 
         return false;
     });
 });
+
+window.onload = function () {
+    const form = document.getElementById('ajax');
+    form.addEventListener('submit', function handleSubmit(event) {
+        event.preventDefault();
+        form.reset();
+    });
+}
 
 let modal = document.querySelector(".preview")
 let modal_2 = document.querySelector(".preview-pdf")
